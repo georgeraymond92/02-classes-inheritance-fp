@@ -1,38 +1,41 @@
 'use strict';
 
-const bubble = () => {
-  return 'bubbles begin to rise';
-};
+const SeaCreature = (name) => ({
+  name: name,
+  bubble: () => {
+    return 'bubble bubble.';
+  },
+  swim: () => {
+    return 'just keep swimming..';
+  },
+});
 
-const swim = () => {
-  return 'just keep swimming';
-};
-
-function LobsterFactory(name) {
+function Lobster(name) {
   let Lobster = Object.assign(
     {},
-    {name},
     {isRed:true},
-    bubble(),
-    swim()
+    {dunkInButter},
+    SeaCreature(name)
   );
 
-  function dunkInButter() {
+  function dunkInButter(){
     return 'I taste better with butter';
   }
+  return Lobster;
 }
 
-function FishFactory(name) {
+function Fish(name) {
   let Fish = Object.assign(
     {},
-    {name},
     {hasGills:true},
-    bubble(),
-    swim()
+    {BatterAndFry},
+    SeaCreature(name)
   );
   function BatterAndFry() {
     return 'Here is some tartar';
   }
+  return Fish;
 }
 
-module.exports = {FishFactory, LobsterFactory};
+
+module.exports = {Fish, Lobster};

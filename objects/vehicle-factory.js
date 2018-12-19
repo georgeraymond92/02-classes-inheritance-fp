@@ -1,36 +1,37 @@
 'use strict';
 
-const drive = () => {
-  return 'Moving Forward';
-};
-const stop = () => {
-  return 'Stopping';
-};
+const vehiclemethods = (name) => ({
+  name: name,
+  drive: () => {
+    return 'Moving Forward';
+  },
+  stop: () => {
+    return 'Stopping';
+  },
+});
 
 
 function Car(name) {
   let Car = Object.assign(
     {},
-    {name},
     {wheels:4},
-    drive(),
-    stop()
+    vehiclemethods(name)
   );
+  return Car;
 }
 
 
 function Motorcycle(name){
   let Motorcycle = Object.assign(
     {},
-    {name},
     {wheels:2},
     {wheelie},
-    drive(),
-    stop()
+    vehiclemethods(name)
   );
   function wheelie(){
     return 'Wheee!';
   }
+  return Motorcycle;
 }
 
 module.exports = {Car, Motorcycle};
