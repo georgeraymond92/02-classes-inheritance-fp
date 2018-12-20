@@ -3,7 +3,7 @@
 
 ## Project Name
 
-### Author: Student/Group Name
+### Author: George Raymond
 
 ### Links and Resources
 * [repo](https://github.com/georgeraymond92/01-node-ecosystem)
